@@ -57,7 +57,17 @@ AND `teachers`.`surname` = "Amato";
 
 4 -	Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
-SELECT `students`.`*`
+SELECT 
+`students`.`id` AS `id_student`
+`students`.`name` AS `name_student`
+`students`.`surname` AS `surname_student`
+
+`degrees`.`id` AS `id_degree`
+`degrees`.`name` AS `name_degree`
+
+`departments`.`id` AS `id_department`
+`departments`.`name` AS `name_department`
+
 FROM `students`
 JOIN `degrees`
 ON `degrees`.`id` = `students`.`degree_id`  
